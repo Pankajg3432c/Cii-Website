@@ -1,0 +1,40 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+body, a, button {
+    cursor: url('/cursor.cur'), auto; /* Custom cursor for all elements */
+}
+
+input, textarea {
+    cursor: text; /* Keep default text cursor for input fields */
+}
+
+/* Ensure body and #root take full height and allow flexbox behavior */
+html, body, #root {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+}
+
+#root {
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1; /* Allow #root to grow and push footer down */
+}
+
+/* This style might be in your App.jsx's main div or here */
+/* If you have a main wrapper inside App.jsx, apply flex-grow: 1 to it */
+
+
+footer {
+    background-color: #111827; /* Tailwind 'bg-gray-900' */
+    color: #ffffff;
+    padding: 1.5rem;
+    text-align: center;
+    /* flex-shrink: 0; /* Prevent footer from shrinking */ /* No longer needed if #root grows */
+}
